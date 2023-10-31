@@ -64,7 +64,7 @@ module.exports = async ({
           return data.json();
         };
         
-        const response = await fetchData(question, 'sk-ujojafxqqigkiqkfa');
+        const response = await fetchData(question, 'YourAPIKey'); // Dapatkan API key disini: https://daniapi.biz.id
         
         console.log(response);
         messages.reply(response.data.answer);
