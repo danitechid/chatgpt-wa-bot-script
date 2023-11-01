@@ -1,5 +1,5 @@
-# ChatGPT - WhatsApp BOT Multi Device Pairing Code - NodeJs
-Script bot WhatsApp dengan fitur ChatGPT, menggunakan perpustakaan WhatsApp Web API
+# WhatsApp BOT Multi Device Pairing Code - NodeJs
+Contoh skrip bot WhatsApp, menggunakan perpustakaan WhatsApp Web API
 
 ## Instalasi
 ### Instal Perangkat Lunak/Paket-Paket
@@ -34,12 +34,12 @@ pkg install yarn
 
 ### Download/Klon Proyek
 ```bash
-git clone https://github.com/danitechid/chatgpt-wa-bot.git
+git clone https://github.com/danitechid/example-wa-bot-script.git
 ```
 
 ### Pindah Direktori (CD)
 ```bash
-cd chatgpt-wa-bot
+cd example-wa-bot-script
 ```
 
 ### Instal Dependensi
