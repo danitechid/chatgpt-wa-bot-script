@@ -34,12 +34,12 @@ pkg install yarn
 
 ### Download/Klon Proyek
 ```bash
-git clone https://github.com/danitechid/example-wa-bot-script.git
+git clone https://github.com/danitechid/chatgpt-wa-bot-script.git
 ```
 
 ### Pindah Direktori (CD)
 ```bash
-cd example-wa-bot-script
+cd chatgpt-wa-bot-script
 ```
 
 ### Instal Dependensi
