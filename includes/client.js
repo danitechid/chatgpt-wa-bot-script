@@ -19,17 +19,9 @@ module.exports = async ({
   try {
     const body = messages.mtype === 'conversation' ? messages.message.conversation : messages.mtype === 'extendedTextMessage' ? messages.message.extendedTextMessage.text : '';
     const budy = typeof messages.text === 'string' ? messages.text : '';
-    const command = body.startsWith(config.prefix) ? body.replace(config.prefix, '').trim().split(/ +/).shift().toLowerCase() : '';
-    const cleanCommand = command.replace(config.prefix, '');
-    const args = body.trim().split(/ +/).slice(1);
-    const query = q = args.join(' ');
-    const query1 = q1 = query.split('|')[0]
-    const query2 = q2 = query.split('|')[1]
 
-    const ownerNumbers = config.owner.number;
     const senderNumber = messages.sender.replace(/\D/g, '');
     const senderName = messages.pushName || 'Undefined';
-    const isOwner = ownerNumbers.includes(messages.sender);
 
     if (!config.public_mode) {
       if (!messages.key.fromMe) {
@@ -49,43 +41,24 @@ module.exports = async ({
       );
     };
 
-    if (!body.startsWith(config.prefix) || body === config.prefix) {
-      return;
-    };
+    try {
+      const question = body;
 
-    switch (cleanCommand) {
-      case 'test': {
-        messages.reply('Ok, Success!');
-        break;
-      };
-      
-      case 'ai':
-      case 'chatgpt':
-      case 'cgpt': {
-        const question = query;
-        if (!query) {
-          return messages.reply(`*Example:* ${config.prefix}${cleanCommand} Hello, AI`);
-        };
-        
-        const fetchData = async (question, apiKey) => {
-          const baseURL = 'https://daniapi.biz.id';
-          const relativeURL = `/api/artificial-intelligence/chatgpt-35?api_key=${apiKey}&question=${question}`;
-          const data = await fetch(baseURL + relativeURL);
+      const fetchData = async (question, apiKey) => {
+        const baseURL = config.api.url;
+        const relativeURL = `/api/artificial-intelligence/chatgpt-35?api_key=${apiKey}&question=${question}`;
+        const data = await fetch(baseURL + relativeURL);
           
-          return data.json();
-        };
-        
-        const response = await fetchData(question, 'YourAPIKey'); // Dapatkan API key disini: https://daniapi.biz.id
-        
-        console.log(response);
-        messages.reply(response.data.answer);
-        
-        break;
+        return data.json();
       };
-      
-      default: {
-        messages.reply(`Command: ${config.prefix}${cleanCommand}, tidak tersedia!`);
-      };
+        
+      const response = await fetchData(question, config.api.key); // Dapatkan API key disini: https://daniapi.biz.id
+        
+      console.log(response);
+      messages.reply(response.data.answer);
+    } catch {
+      messages.reply('Terjadi kesalahan pada server.');
+      console.error(error);
     };
   } catch (error) {
     messages.reply('Terjadi kesalahan pada server.');
