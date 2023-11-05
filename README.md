@@ -45,8 +45,7 @@ cd chatgpt-wa-bot-script
 ### Application Programming Interface (API)
 #### Dapatkan Kunci API
 Daftar dan dapatkan kunci API:
-1. <a href="https://daniapi.biz.id">https://daniapi.biz.id</a>
-2. <a href="https://api.caliph.biz.id">https://api.caliph.biz.id</a>
+<a href="https://daniapi.biz.id">https://daniapi.biz.id</a>
 
 #### Edit ./config/settings.js > api
 ```javascript
