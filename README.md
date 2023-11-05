@@ -42,6 +42,20 @@ git clone https://github.com/danitechid/chatgpt-wa-bot-script.git
 cd chatgpt-wa-bot-script
 ```
 
+### Application Programming Interface (API)
+#### Dapatkan Kunci API
+Daftar dan dapatkan kunci API:
+1. <a href="https://daniapi.biz.id">https://daniapi.biz.id</a>
+2. <a href="https://api.caliph.biz.id">https://api.caliph.biz.id</a>
+
+#### Edit ./config/settings.js > api
+```javascript
+api: {
+  ...
+  key: 'Your_API_key' // Registrasi disini: https://daniapi.biz.id/#sign-up
+}
+```
+
 ### Instal Dependensi
 #### Menggunakan Npm
 ```bash
@@ -79,4 +93,5 @@ bun run start
 
 ## Terimakasih Kepada
 * Dani Techno. - FullStack Engineer (Pembuat / Pengembang)
+* daniapi.biz.id (Penyedia API)
 * @danitech/wa-web-api (Penyedia Library "WhatsApp Web API")
