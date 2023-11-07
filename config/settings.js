@@ -1,7 +1,7 @@
 module.exports = {
   pairing_mode: true,
   session_folder_name: 'session',
-  browser: ["Chrome (Windows)", "latest"],
+  browser: ["Chrome (Linux)"],
   public_mode: true,
   bot: {
     name: 'Bot Name'
@@ -12,6 +12,6 @@ module.exports = {
   },
   api: {
     url: 'https://daniapi.biz.id',
-    key: 'Your-API-Key'
+    key: 'Your-API-key'
   }
 };
