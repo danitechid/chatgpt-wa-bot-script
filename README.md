@@ -51,7 +51,7 @@ Daftar dan dapatkan kunci API:
 ```javascript
 api: {
   ...
-  key: 'Your_API_key' // Registrasi disini: https://daniapi.biz.id/#sign-up
+  key: 'Your-API-key' // Registrasi disini: https://daniapi.biz.id/#sign-up
 }
 ```
 
